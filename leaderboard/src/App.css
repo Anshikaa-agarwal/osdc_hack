@@ -1,0 +1,64 @@
+.navbar,
+.sidebar {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.navbar .nav-link,
+.sidebar .nav-link {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide navbar for smaller screens */
+  }
+
+  .sidebar {
+    position: fixed; /* Make sidebar fixed for side menu */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full viewport height */
+    width: 70%; /* Adjust sidebar width as needed */
+    background-color: #eee; /* Change sidebar background color */
+    transform: translateX(-100%); /* Hide sidebar initially */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.open { /* Add class for open state */
+    transform: translateX(0); /* Show sidebar on click */
+  }
+}
+
+/* Menu Toggle Button Styles */
+
+.menu-toggle {
+  display: none; /* Hide on larger screens */
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show on smaller screens */
+  }
+}
